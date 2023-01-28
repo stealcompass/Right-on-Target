@@ -13,6 +13,7 @@
 		141C3CAF29854C2E00970485 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141C3CAD29854C2E00970485 /* Main.storyboard */; };
 		141C3CB129854C3000970485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141C3CB029854C3000970485 /* Assets.xcassets */; };
 		141C3CB429854C3000970485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141C3CB229854C3000970485 /* LaunchScreen.storyboard */; };
+		146E724629857572003E8690 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E724529857572003E8690 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		141C3CB029854C3000970485 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		141C3CB329854C3000970485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		141C3CB529854C3000970485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		146E724529857572003E8690 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +61,21 @@
 				141C3CA729854C2E00970485 /* AppDelegate.swift */,
 				141C3CA929854C2E00970485 /* SceneDelegate.swift */,
 				141C3CAB29854C2E00970485 /* ViewController.swift */,
+				146E724429857452003E8690 /* Model */,
 				141C3CAD29854C2E00970485 /* Main.storyboard */,
 				141C3CB029854C3000970485 /* Assets.xcassets */,
 				141C3CB229854C3000970485 /* LaunchScreen.storyboard */,
 				141C3CB529854C3000970485 /* Info.plist */,
 			);
 			path = "Right on Target";
+			sourceTree = "<group>";
+		};
+		146E724429857452003E8690 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				146E724529857572003E8690 /* Game.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				141C3CAC29854C2E00970485 /* ViewController.swift in Sources */,
 				141C3CA829854C2E00970485 /* AppDelegate.swift in Sources */,
 				141C3CAA29854C2E00970485 /* SceneDelegate.swift in Sources */,
+				146E724629857572003E8690 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

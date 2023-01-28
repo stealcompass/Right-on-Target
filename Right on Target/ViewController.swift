@@ -12,11 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
 
+    var game = Game(startValue: 1, endValue: 50, rounds: 5)
     
-    var round: Int = 0
-    var number: Int = 0
-    var points: Int = 0
-    
+    // MARK: Жизненный цикл ViewController (текущей сцены)
     override func loadView() {
         //в данном методе производится загрузка всех размещенных на сцене графических элементов
         //в нашем случае элементы - это наши аутлеты слайдер, лейбл, кнопка
@@ -35,7 +33,6 @@ class ViewController: UIViewController {
         //уже в процессе загрузки. Это произойдет по причине того, что корневой view сцены еще не загружен,
         //и обращение к свойству self.view приводит к ошибке, так как до момента вызова
         //super.loadView() свойство self.view соответствует nil, т.е. в нем нет значения.
-        
     }
     
     
@@ -48,9 +45,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("viewDidLoad")
         // Do any additional setup after loading the view.
-        self.round = 1
-        self.number = Int.random(in: 1...50)
-        self.label.text = String(self.number)
+        game?.startNewRound()
+        self.label.text = String(game?.currentSecretValue ?? 0)
     }
     
     
@@ -84,34 +80,25 @@ class ViewController: UIViewController {
     }
     
 
-    
+    // MARK: Взаимодействие с моделью
     @IBAction func checkNumber(){
         let numSlider = Int(self.slider.value)
         
-        if numSlider > self.number {
-            self.points += 50 - numSlider + self.number
-        } else if numSlider < self.number {
-            self.points += 50 - self.number + numSlider
-        } else {
-            self.points += 50
-        }
+        game?.calculateScore(with: numSlider)
         
-        if self.round == 5 {
+        if game?.isEnded == true {
             
-            let alert = UIAlertController(title: "Игра окончена", message: "Вы заработали \(self.points)  очков", preferredStyle: .alert)
+            guard let score = game?.score else {return}
+            let alert = UIAlertController(title: "Игра окончена", message: "Вы заработали \(score)  очков", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Начать заново", style: .default))
             self.present(alert, animated: true)
-            
-            self.round = 1
-            self.points = 0
-            
-        } else {
-            self.round += 1
+
+            game?.restartGame()
         }
-        
-        // по причине того, что viewDidLoad вызывается единожды
-        self.number = Int.random(in: 1...50)
-        self.label.text = String(self.number)
+
+        game?.startNewRound()
+        self.label.text = String(game?.currentSecretValue ?? 0)
     }
+    
 }
 
