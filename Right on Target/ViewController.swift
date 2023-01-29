@@ -45,8 +45,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("viewDidLoad")
         // Do any additional setup after loading the view.
-        game?.startNewRound()
-        self.label.text = String(game?.currentSecretValue ?? 0)
+        self.label.text = String(game.secretValue)
     }
     
     
@@ -84,20 +83,29 @@ class ViewController: UIViewController {
     @IBAction func checkNumber(){
         let numSlider = Int(self.slider.value)
         
-        game?.calculateScore(with: numSlider)
+        game.currentRound.calculateScore(with: numSlider)
+        //game.score = game.currentRound.score
+        //print("Score: \(game.score)")
         
-        if game?.isEnded == true {
+        
+        if game.isEnded == true {
             
-            guard let score = game?.score else {return}
-            let alert = UIAlertController(title: "Игра окончена", message: "Вы заработали \(score)  очков", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Начать заново", style: .default))
-            self.present(alert, animated: true)
-
-            game?.restartGame()
+            //game.totalScore()
+            showAlert(score: game.score)
+            game.restartGame()
+            
+        } else {
+            game.startNewRound()
         }
-
-        game?.startNewRound()
-        self.label.text = String(game?.currentSecretValue ?? 0)
+        
+        self.label.text = String(game.secretValue)
+    }
+    
+    
+    private func showAlert(score: Int){
+        let alert = UIAlertController(title: "Игра окончена", message: "Вы заработали \(score)  очков", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Начать заново", style: .default))
+        self.present(alert, animated: true)
     }
     
 }

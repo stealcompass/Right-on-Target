@@ -14,6 +14,8 @@
 		141C3CB129854C3000970485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141C3CB029854C3000970485 /* Assets.xcassets */; };
 		141C3CB429854C3000970485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141C3CB229854C3000970485 /* LaunchScreen.storyboard */; };
 		146E724629857572003E8690 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E724529857572003E8690 /* Game.swift */; };
+		146E72492985964B003E8690 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E72482985964B003E8690 /* Round.swift */; };
+		146E724B29859DCD003E8690 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E724A29859DCD003E8690 /* Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		141C3CB329854C3000970485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		141C3CB529854C3000970485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		146E724529857572003E8690 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		146E72482985964B003E8690 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		146E724A29859DCD003E8690 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +77,9 @@
 		146E724429857452003E8690 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				146E72482985964B003E8690 /* Round.swift */,
 				146E724529857572003E8690 /* Game.swift */,
+				146E724A29859DCD003E8690 /* Random.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,7 +157,9 @@
 			files = (
 				141C3CAC29854C2E00970485 /* ViewController.swift in Sources */,
 				141C3CA829854C2E00970485 /* AppDelegate.swift in Sources */,
+				146E724B29859DCD003E8690 /* Random.swift in Sources */,
 				141C3CAA29854C2E00970485 /* SceneDelegate.swift in Sources */,
+				146E72492985964B003E8690 /* Round.swift in Sources */,
 				146E724629857572003E8690 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,7 +319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.stealcompass.Right-on-Target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -342,7 +350,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.stealcompass.Right-on-Target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
